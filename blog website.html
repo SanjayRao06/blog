@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-family: 'Lora', serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #00aaff;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00aaff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Hero Section */
+.hero {
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 60px;
+  color: #fff;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.hero .cta-btn {
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.hero .cta-btn:active {
+  transform: scale(0.95);
+}
+
+/* Blog Section */
+.blog {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.blog h2 {
+  font-family: 'Lora', serif;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.blog-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+/* Categories Section */
+.categories {
+  background-color: #f1f1f1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.category-btn {
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 10px;
+}
+
+.category-btn:hover {
+  transform: scale(1.1);
+  background-color: #0088cc;
+}
+
+/* Subscribe Section */
+.subscribe {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.subscribe h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.subscribe form input {
+  padding: 12px;
+  font-size: 16px;
+  margin: 10px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.subscribe-btn {
+  background-color: #00aaff;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.6);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.colcol{
+    color:#0088cc;
+}
+
+.social-icon:hover {
+  transform: rotate(20deg);
+}
+
+        </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">SANJAYS EPIC BLOG!!</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1 color = "red">Welcome to My Blog</h1>
+    <p color = "red">Discover amazing posts, tips, and ideas that give you reasons why im the goat </p>
+    <button class="cta-btn">Join Now</button>
+  </section>
+
+  
+  <section id="blog" class="blog">
+    <h2>Latest Blog Posts</h2>
+    <div class="blog-cards">
+      <div class="card">
+        <img src="pasta1.webp" alt="Post 1">
+        <h3>Why i hate cats</h3>
+        <p>Cats are annoying pests that leech off of you...</p>
+      </div>
+      <div class="card">
+        <img src="dosa2.jpg" alt="Post 2">
+        <h3>Peterbot solos the entire fn universe</h3>
+        <p>DO i need to really describe what kind of monster he...</p>
+      </div>
+      <div class="card">
+        <img src="dosa1.jpg" alt="Post 3">
+        <h3>Subscribe</h3>
+        <p>A subscirbe helps me out tons. i desperately nee them...</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="categories" class="categories">
+    <h2>Categories</h2>
+    <div class="category-buttons">
+      <button class="category-btn">Technology</button>
+      <button class="category-btn">Lifestyle</button>
+      <button class="category-btn">Health</button>
+    </div>
+  </section>
+
+
+  <section id="subscribe" class="subscribe">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <button type="submit" class="subscribe-btn">Subscribe</button>
+    </form>
+  </section>
+
+ 
+  <footer>
+    <div class="social-media">
+      <a href="#" class="social-icon">Facebook</a>
+      <a href="#" class="social-icon">Twitter</a>
+      <a href="#" class="social-icon">Instagram</a>
+    </div>
+  </footer>
+  
+</body>
+</html>
